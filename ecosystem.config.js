@@ -1,0 +1,20 @@
+module.exports = {
+  apps: [{
+    name: "insignia-frontend",
+    script: "serve",
+    args: "-s dist -l 3001",
+    instances: 1,
+    autorestart: true,
+    watch: false,
+    max_memory_restart: '200M',
+    env: {
+      PM2_SERVE_PATH: "dist",
+      PM2_SERVE_PORT: 3001,
+      PM2_SERVE_SPA: "true"
+    },
+    log_date_format: "YYYY-MM-DD HH:mm:ss",
+    error_file: "logs/pm2-error.log",
+    out_file: "logs/pm2-output.log",
+    time: true
+  }]
+};

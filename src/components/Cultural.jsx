@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from "axios";
-import Card from '../Components/Card';
+import Card from './ui/Card';
 
-function Centralized() {
+function Cultural() {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        axios.get("http://localhost:8081/events?cid=1")
+        axios.get("http://localhost:8081/events?cid=3")
             .then(res => {
                 console.log(res.data); // Debugging
                 setData(res.data);
@@ -30,4 +30,4 @@ function Centralized() {
     );
 }
 
-export default Centralized;
+export default Cultural;
