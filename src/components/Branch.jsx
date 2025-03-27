@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
+import api from '../utils/api'; // Adjust the import path as necessary
 
 function Branch() {
     const [branches, setBranches] = useState([]);
 
     useEffect(() => {
-        axios.get("http://localhost:8081/branches")
+        api.get("/api/v1/branches")
             .then(res => {
                 console.log("Fetched Branches:", res.data);
                 if (Array.isArray(res.data)) {

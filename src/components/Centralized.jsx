@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import axios from "axios";
 import Card from './ui/Card';
+import api from '../utils/api'; // Adjust the import path as necessary
 
 function Centralized() {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        axios.get("http://localhost:8081/events/1")
+        api.get("api/v1/events/1")
             .then(res => {
                 console.log(res.data); // Debugging
                 setData(res.data);

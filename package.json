@@ -4,9 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "start": "pm2 start ecosystem.config.cjs",
+    "stop": "pm2 stop ecosystem.config.cjs",
     "dev": "vite",
     "build": "vite build",
-    "lint": "eslint .",
+    "build:prod": "vite build --mode production",
     "preview": "vite preview"
   },
   "dependencies": {

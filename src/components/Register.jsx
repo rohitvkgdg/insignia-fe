@@ -17,7 +17,7 @@ function Register() {
 
     // ✅ Fetch event name when the page loads
     useEffect(() => {
-        axios.get(`http://localhost:8081/events/${eventId}`)
+        axios.get(`http://localhost:5173/events/${eventId}`)
             .then(response => {
                 setEventName(response.data.ename); // Store event name
             })
@@ -32,7 +32,7 @@ function Register() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:8081/register', formData)
+        axios.post('http://localhost:5173/register', formData)
         .then(response => {
             console.log("Backend Response:", response.data.Message);
             
