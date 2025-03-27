@@ -7,7 +7,7 @@ function Cultural() {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        axios.get("http://localhost:5173/events?cid=3")
+        api.get("/api/v1/events?cid=3")
             .then(res => {
                 console.log(res.data); // Debugging
                 setData(res.data);

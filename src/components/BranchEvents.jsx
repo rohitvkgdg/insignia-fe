@@ -11,7 +11,7 @@ function BranchEvents() {
     useEffect(() => {
         console.log("Fetching events for branch:", branchId); // Debugging log
 
-        axios.get(`http://localhost:5173/branches/${branchId}`)
+        api.get(`api/v1/branches/${branchId}`)
             .then(res => {
                 console.log("Fetched Events:", res.data);
                 setEvents(res.data);

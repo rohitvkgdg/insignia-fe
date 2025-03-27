@@ -9,7 +9,7 @@ function EventDetails() {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        axios.get(`http://localhost:5173/events/${eventId}`)
+        api.get(`/api/v1/events/${eventId}`)
             .then(res => {
                 console.log("Event Data:", res.data); 
                 setEvent(res.data); 
